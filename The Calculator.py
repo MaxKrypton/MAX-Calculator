@@ -33,6 +33,12 @@ def main():
         
         def root(n, m):
             return n ** (1 / m)
+        
+        def modulus(n, m):
+            quotient = n // m
+            remainder = n % m
+            return quotient, remainder
+
 
         print("------------------------")
 
