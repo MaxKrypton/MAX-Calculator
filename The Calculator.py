@@ -13,7 +13,7 @@ def main():
 
     print("-----------------------------------")
     while True:
-        print(f"What is the operation you would like to do, {name}?\n 1. Addtion \n 2. Substration\n 3. Multiplication\n 4. Division\n 5. Power\n 6. Root\n 7. Quit the Program ")
+        print(f"What is the operation you would like to do, {name}?\n 1. Addtion \n 2. Substration\n 3. Multiplication\n 4. Division\n 5. Power\n 6. Root\n 7. Modulus\n 8. Quit the Program")
         
         # Defining Operation Functions
         def addition(n,m):
@@ -37,7 +37,7 @@ def main():
         print("------------------------")
 
         try:
-            choice = int(input("> Choose [1/2/3/4/5/6/7] "))
+            choice = int(input("> Choose [1/2/3/4/5/6/7/8] "))
             
             # Addittion Operation
 
@@ -116,10 +116,22 @@ def main():
                 answer = root(x,y)
                 
                 print(f"The {y} root of {x} is eaqual to {answer:,}")
+
+            elif choice == 7:
+                print("Welcome to the Modulus operation\n")
+                
+                x = int(input("What is your first number? "))
+                print("...........")
+                y = int(input("What is your second number? "))
+                print("...........")
+                answer, remainder = modulus(x, y)
+                
+                print(f"The Modulus of {x} divided by {y} is {answer} with a remainder of {remainder}")
+
                 
             # Quitting the Program
                 
-            elif choice == 7:
+            elif choice == 8:
                 break
                 exit
                 
