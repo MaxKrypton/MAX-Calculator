@@ -115,13 +115,14 @@ def main():
             elif choice == 6:
                 print("Welcome to the Root operation\n")
                 
-                x = int(input("What is the number? "))
+                x = int(input("Enter the number: "))
                 print("...........")
-                y = int(input("What is the root of your number "))
+                y = int(input("Enter the degree of the root: "))
                 print("...........")
-                answer = root(x,y)
+                answer = root(x, y)
                 
-                print(f"The {y} root of {x} is eaqual to {answer:,}")
+                print(f"The {y}-th root of {x} is equal to {answer:,}")
+
 
             elif choice == 7:
                 print("Welcome to the Modulus operation\n")
