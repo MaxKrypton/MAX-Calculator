@@ -13,7 +13,7 @@ def main():
 
     print("-----------------------------------")
     while True:
-        print(f"What is the operation you would like to do, {name}?\n 1. Addtion \n 2. Substration\n 3. Multiplication\n 4. Division\n 5. Power\n 6. Root\n 7. Modulus\n 8. Quit the Program")
+        print(f"What is the operation you would like to do, {name}?\n 1. Addition \n 2. Substration\n 3. Multiplication\n 4. Division\n 5. Power\n 6. Root\n 7. Modulus\n 8. Quit the Program")
         
         # Defining Operation Functions
         def addition(n,m):
@@ -95,7 +95,7 @@ def main():
                 print("...........")
                 answer = division(x,y)
                 
-                print(f"The Divion of {x} and {y} is {answer:,}")
+                print(f"The Division of {x} and {y} is {answer:,}")
                 
             # Power Operation
             
@@ -144,11 +144,12 @@ def main():
                 
             else:
                 print('..............')
-                print("ERROR:Please Enter a number between 1 and 4")
+                print("ERROR:Please Enter a number between 1 and 8")
 
         except ValueError:
             print("...............")
-            print("Wrong Input: Enter a Valid Number")
+            print("ERROR: Please Enter a valid number between 1 and 7")
+
         
 if __name__=="__main__":
     main()
