@@ -1,13 +1,5 @@
 def main():
-    print("Welcome to MAX-Calculator")
-    
-    name = input("What is Your Name? ").strip().title().rstrip()
-    
-    with open("user_name.txt", "a") as file:
-        
-        file.write(f"User Name: {name}\n")
-    
-    print("...............")
+   
     
     print(f"Your name is {name}, You have a wonderful name")
 
