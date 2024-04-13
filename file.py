@@ -17,8 +17,21 @@ def save_history(calculator):
             for calculation in history:
                 file.write(calculation + "\n")
         colorful_output("History saved successfully.", Color.GREEN)
+        calculator.clear_history()
     except Exception as e:
         colorful_output(f"Error saving history: {str(e)}", Color.RED)
+        
+def delete_history(user_name):
+    directory = "./files/histories/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}{user_name}_history.txt"
+    try:
+        os.remove(file_name)
+        colorful_output("History deleted successfully.", Color.GREEN)
+    except FileNotFoundError:
+        colorful_output("History file not found.", Color.YELLOW)
+    except Exception as e:
+        colorful_output(f"Error deleting history: {str(e)}", Color.RED)
 
 def load_history(user_name):
     directory = "./files/histories/"
@@ -55,8 +68,9 @@ def file_management(calculator):
         colorful_output("-" * 50, Color.CYAN)
         print("1. Save History")
         print("2. Load History")
-        print("3. Quit")
-        choice = input("> Choose [1/2/3] ")
+        print("3. Clear History")
+        print("00. Go Back")
+        choice = input("> Choose [1/2/3/00] ")
         if choice == "1":
             if not calculator.history:
                 colorful_output("No history to save.", Color.YELLOW)
@@ -71,6 +85,9 @@ def file_management(calculator):
             else:
                 colorful_output("No history found.", Color.YELLOW)
         elif choice == "3":
+            calculator.clear_history()
+            delete_history(user_name)
+        elif choice == "00":
             break
         else:
             colorful_output("Invalid choice. Please try again.", Color.RED)
