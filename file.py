@@ -94,3 +94,74 @@ def file_management(calculator):
         
         # press any key to continue
         input("Press any key to continue...")
+
+def load_variables_from_file():
+    variable_storage = {}
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}variables.txt"
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                name, value = line.strip().split(" = ")
+                variable_storage[name] = value
+        return variable_storage
+    except FileNotFoundError:
+        colorful_output("No variables found.", Color.YELLOW)
+        return {}
+    except Exception as e:
+        colorful_output(f"Error loading variables: {str(e)}", Color.RED)
+        return {}
+
+def save_variables_to_file(variable_storage):
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}variables.txt"
+    try:
+        with open(file_name, "w") as file:
+            for name, value in variable_storage.items():
+                file.write(f"{name} = {value}\n")
+        colorful_output("Variables saved successfully.", Color.GREEN)
+    except Exception as e:
+        colorful_output(f"Error saving variables: {str(e)}", Color.RED)
+
+def load_commands_from_file():
+    command_storage = []
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}commands.txt"
+    try:
+        with open(file_name, "r") as file:
+            for line in file:
+                command_storage.append(line.strip())
+        return command_storage
+    except FileNotFoundError:
+        colorful_output("No commands found.", Color.YELLOW)
+        return []
+    except Exception as e:
+        colorful_output(f"Error loading commands: {str(e)}", Color.RED)
+        return []
+
+def save_commands_to_file(command_storage):
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}commands.txt"
+    try:
+        with open(file_name, "w") as file:
+            for command in command_storage:
+                file.write(f"{command}\n")
+        colorful_output("Commands saved successfully.", Color.GREEN)
+    except Exception as e:
+        colorful_output(f"Error saving commands: {str(e)}", Color.RED)
+        
+def clear_commands_from_file():
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}commands.txt"
+    try:
+        os.remove(file_name)
+        colorful_output("Commands deleted successfully.", Color.GREEN)
+    except FileNotFoundError:
+        colorful_output("Commands file not found.", Color.YELLOW)
+    except Exception as e:
+        colorful_output(f"Error deleting commands: {str(e)}", Color.RED)

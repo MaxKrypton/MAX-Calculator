@@ -2,7 +2,7 @@ from calculator import Calculator
 from basic import basic_operations_menu
 from menu import interactive_menu
 from input import dynamic_input_handling
-from history import command_history_menu
+from command_history import command_history_menu
 from file import file_management, save_history
 from help import help_documentation
 from evaluator import expression_evaluation

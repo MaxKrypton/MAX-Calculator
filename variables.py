@@ -1,22 +1,26 @@
 from errors import error_handling
 from color import Color, colorful_output
+from file import save_variables_to_file, load_variables_from_file
 
 
 class VariableStorage:
     def __init__(self):
-        self.variables = {}
+        self.variables = load_variables_from_file()
 
     def store_variable(self, name, value):
         self.variables[name] = value
+        save_variables_to_file(self.variables)
         colorful_output(f"Variable '{name}' stored successfully.", Color.GREEN)
 
     def retrieve_variable(self, name):
+        self.variables = load_variables_from_file()
         if name in self.variables:
             return self.variables[name]
         else:
             return f"Error: Variable '{name}' not found."
 
     def display_variables(self):
+        self.variables = load_variables_from_file()
         if self.variables:
             colorful_output("Stored Variables:", Color.YELLOW)
             for name, value in self.variables.items():
