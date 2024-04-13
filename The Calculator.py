@@ -9,7 +9,7 @@ def main():
     
     print("...............")
     
-    
+    print(f"Your name is {name}, You have a wonderful name")
 
     print("-----------------------------------")
     while True:
