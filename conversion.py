@@ -1,18 +1,19 @@
 from errors import error_handling
 from color import Color, colorful_output
 
+
 def unit_conversion(calculator):
     colorful_output("*" * 50, Color.BLUE)
     colorful_output("               Unit Conversion Menu", Color.BLUE)
     colorful_output("*" * 50, Color.BLUE)
-    
+
     print("1. Length")
     print("2. Mass")
     print("3. Volume")
     print("00. Go back")
-    
+
     choice = input("Enter your choice: ")
-    
+
     if choice == "1":
         length_conversion(calculator)
     elif choice == "2":
@@ -23,6 +24,7 @@ def unit_conversion(calculator):
         return  # Go back
     else:
         error_handling("Invalid choice")
+
 
 def length_conversion(calculator):
     colorful_output("*" * 50, Color.GREEN)
@@ -51,6 +53,7 @@ def length_conversion(calculator):
     else:
         error_handling("Invalid choice")
 
+
 def mass_conversion(calculator):
     colorful_output("*" * 50, Color.BLUE)
     colorful_output("         Mass Conversion Menu", Color.BLUE)
@@ -77,6 +80,7 @@ def mass_conversion(calculator):
             error_handling("Invalid input")
     else:
         error_handling("Invalid choice")
+
 
 def volume_conversion(calculator):
     colorful_output("*" * 50, Color.MAGENTA)

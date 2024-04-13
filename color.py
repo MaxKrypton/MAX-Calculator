@@ -20,6 +20,7 @@ class Color:
     BG_CYAN = '\033[46m'
     BG_WHITE = '\033[47m'
 
+
 def colorful_output(message, color):
     # Function to generate colorful output using ANSI escape codes
     colored_message = color + message + Color.RESET

@@ -1,5 +1,6 @@
 from color import Color, colorful_output
 
+
 class CommandHistory:
     def __init__(self):
         self.history = []
@@ -19,6 +20,7 @@ class CommandHistory:
                 print(f"{index}. {calculation}")
         else:
             colorful_output("Command History is empty.", Color.YELLOW)
+
 
 def command_history_menu():
     history = CommandHistory()

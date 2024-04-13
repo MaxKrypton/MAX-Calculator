@@ -2,6 +2,7 @@ from basic_operations import addition, subtraction, multiplication, division, po
 from errors import error_handling
 from color import Color, colorful_output
 
+
 def basic_operations_menu(calculator):
     while True:
         colorful_output("-" * 30, Color.BLUE)
@@ -22,6 +23,7 @@ def basic_operations_menu(calculator):
         else:
             perform_basic_operation(choice, calculator)
 
+
 def perform_basic_operation(choice, calculator):
     operation_functions = {
         "1": addition,
@@ -39,13 +41,14 @@ def perform_basic_operation(choice, calculator):
     else:
         error_handling("Invalid choice")
 
+
 def perform_operation(operation_function, calculator):
     try:
         x = float(input("Enter the first number: "))
         y = float(input("Enter the second number: "))
         result = operation_function(x, y)
-        resultInMessage = f"{x} {operation_function.__name__} {y} = {result}"
-        colorful_output(resultInMessage, Color.GREEN)
+        result_in_message = f"{x} {operation_function.__name__} {y} = {result}"
+        colorful_output(result_in_message, Color.GREEN)
         calculator.history.append(f"{x} {operation_function.__name__} {y} = {result}")
     except ValueError:
         error_handling("Invalid input")

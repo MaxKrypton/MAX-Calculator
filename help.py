@@ -1,7 +1,10 @@
 from color import Color, colorful_output
 
+
 def help_documentation():
+    colorful_output("-" * 50, Color.BLUE)
     colorful_output("MAX Calculator Help Documentation", Color.CYAN)
+    colorful_output("-" * 50, Color.BLUE)
     print("Welcome to MAX Calculator Help Documentation!")
     print("Here are the available functionalities and their usage:")
     print()
@@ -25,9 +28,9 @@ def help_documentation():
     print("- Keep track of previous calculations and review them when needed.")
     print("- Navigate to the Command History option from the main menu.")
     print()
-    colorful_output("File Management", Color.YELLOW)
-    print("- Save and load calculation history to/from files.")
-    print("- Manage files using the File Management option from the main menu.")
+    colorful_output("History Management", Color.YELLOW)
+    print("- Save and load calculation history to/from storage.")
+    print("- Manage storage using the History Management option from the main menu.")
     print()
     colorful_output("Help Documentation", Color.YELLOW)
     print("- Get assistance and information about the calculator's functionalities.")
@@ -38,6 +41,6 @@ def help_documentation():
     print("- Choose the Quit option from the main menu.")
     print()
     colorful_output("Enjoy using MAX Calculator!", Color.GREEN)
+
     # press any key to continue
     input("Press any key to continue...")
-    return

@@ -1,6 +1,7 @@
 from errors import error_handling
 from color import Color, colorful_output
 
+
 class VariableStorage:
     def __init__(self):
         self.variables = {}
@@ -22,6 +23,7 @@ class VariableStorage:
                 print(f"{name}: {value}")
         else:
             colorful_output("No variables stored.", Color.YELLOW)
+
 
 def variable_storage(calculator):
     storage = VariableStorage()
