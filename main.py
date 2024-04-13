@@ -4,13 +4,12 @@ from color import colorful_output
 from menu import interactive_menu
 from input import dynamic_input_handling
 from history import command_history_menu
-from settings import settings_management
+from file import file_management
 from help import help_documentation
 from evaluator import expression_evaluation
 from errors import error_handling
 from conversion import unit_conversion
 from variables import variable_storage
-from file import file_management
 
 def main():
     calculator = Calculator()
@@ -34,7 +33,7 @@ def main():
         elif choice == "5":
             command_history_menu()
         elif choice == "6":
-            settings_management()
+            file_management(calculator)
         elif choice == "7":
             help_documentation()
         elif choice == "8":
@@ -43,7 +42,12 @@ def main():
             error_handling("Invalid choice")
 
     # Save calculation history to file
-    file_manager.save_history(calculator.history, calculator.user_name)
+    file_manager.save_history(calculator)
+    
+    
+    # press any key to continue
+    input("Press any key to continue...")
+    return
 
 if __name__ == "__main__":
     main()

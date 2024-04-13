@@ -1,4 +1,5 @@
 from color import Color, colorful_output
+from file import FileManager
 
 class Calculator:
     def __init__(self):
@@ -7,6 +8,10 @@ class Calculator:
         colorful_output("====================================", Color.BLUE)
         self.user_name = input("What is your name? ")
         self.history = []
+        
+        # Save user name with timestamp
+        file_manager = FileManager()
+        file_manager.save_username_with_timestamp(self.user_name)
 
     def save_to_history(self, calculation):
         # Method to save calculation to history
