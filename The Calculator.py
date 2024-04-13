@@ -19,6 +19,8 @@ def main():
         def addition(n,m):
             return n + m
 
+        def substraction(n,m):
+            return n - m
 
         def multiplication(n,m):
             return n * m
