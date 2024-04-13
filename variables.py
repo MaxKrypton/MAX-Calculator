@@ -27,7 +27,14 @@ class VariableStorage:
                 print(f"{name}: {value}")
         else:
             colorful_output("No variables stored.", Color.YELLOW)
-
+    def delete_variable(self, name):
+        self.variables = load_variables_from_file()
+        if name in self.variables:
+            del self.variables[name]
+            save_variables_to_file(self.variables)
+            colorful_output(f"Variable '{name}' deleted successfully.", Color.RED)
+        else:
+            colorful_output(f"Error: Variable '{name}' not found.", Color.RED)
 
 def variable_storage(calculator):
     storage = VariableStorage()
@@ -38,8 +45,9 @@ def variable_storage(calculator):
         print("1. Store Variable")
         print("2. Retrieve Variable")
         print("3. Display Variables")
+        print("4. Delete Variable")
         print("00. Go Back")
-        choice = input("> Choose [1/2/3/00] ")
+        choice = input("> Choose [1/2/3/4/00] ")
         if choice == "1":
             name = input("Enter variable name: ")
             value = input("Enter variable value: ")
@@ -50,6 +58,9 @@ def variable_storage(calculator):
             colorful_output(result, Color.MAGENTA)
         elif choice == "3":
             storage.display_variables()
+        elif choice == "4":
+            name = input("Enter variable name to delete: ")
+            storage.delete_variable(name)
         elif choice == "00":
             break
         else:

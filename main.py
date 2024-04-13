@@ -9,6 +9,7 @@ from evaluator import expression_evaluation
 from errors import error_handling
 from conversion import unit_conversion
 from variables import variable_storage
+from color import Color, colorful_output
 
 
 def main():
@@ -37,6 +38,7 @@ def main():
         elif choice == "7":
             help_documentation()
         elif choice == "8":
+            colorful_output("Bye!", Color.GREEN)
             return False  # Exit the calculator
         else:
             error_handling("Invalid choice")
