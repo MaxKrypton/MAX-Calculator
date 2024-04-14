@@ -4,7 +4,7 @@ from color import Color, colorful_output
 
 def unit_conversion(calculator):
     colorful_output("*" * 50, Color.BLUE)
-    colorful_output("               Unit Conversion Menu", Color.BLUE)
+    colorful_output("Unit Conversion Menu", Color.BLUE)
     colorful_output("*" * 50, Color.BLUE)
 
     print("1. Length")
@@ -28,7 +28,7 @@ def unit_conversion(calculator):
 
 def length_conversion(calculator):
     colorful_output("*" * 50, Color.GREEN)
-    colorful_output("        Length Conversion Menu", Color.GREEN)
+    colorful_output("Length Conversion Menu", Color.GREEN)
     colorful_output("*" * 50, Color.GREEN)
     print("1. Meter to Feet")
     print("2. Feet to Meter")
@@ -56,7 +56,7 @@ def length_conversion(calculator):
 
 def mass_conversion(calculator):
     colorful_output("*" * 50, Color.BLUE)
-    colorful_output("         Mass Conversion Menu", Color.BLUE)
+    colorful_output("Mass Conversion Menu", Color.BLUE)
     colorful_output("*" * 50, Color.BLUE)
     print("1. Kilogram to Pound")
     print("2. Pound to Kilogram")
@@ -84,7 +84,7 @@ def mass_conversion(calculator):
 
 def volume_conversion(calculator):
     colorful_output("*" * 50, Color.MAGENTA)
-    colorful_output("       Volume Conversion Menu", Color.MAGENTA)
+    colorful_output("Volume Conversion Menu", Color.MAGENTA)
     colorful_output("*" * 50, Color.MAGENTA)
     print("1. Liter to Gallon")
     print("2. Gallon to Liter")
