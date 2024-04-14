@@ -41,7 +41,7 @@ def main():
             colorful_output("Bye!", Color.GREEN)
             return False  # Exit the calculator
         else:
-            error_handling("Invalid choice")
+            error_handling("Invalid choice, enter a valid option")
 
         # Save calculation history to file
         save_history(calculator)
