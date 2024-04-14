@@ -36,5 +36,5 @@ To enhance functionality and organisation, we plan to create distinct functions 
     Clone the repository to your local machine.
     Navigate to the project directory.
     Run the main.py file using Python.
-    
-python main.py
+
+    python main.py
