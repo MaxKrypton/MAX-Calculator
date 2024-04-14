@@ -12,6 +12,7 @@ class Calculator:
 
         # Save username with timestamp
         save_username_with_timestamp(self.user_name)
+        print("Enjoy using the MAX-cALCULATOR, " , self.user_name)
 
     def save_to_history(self, calculation):
         # Method to save calculation to history
