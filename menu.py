@@ -9,7 +9,7 @@ def interactive_menu():
     print("2. Expression Evaluation")
     print("3. Unit Conversion")
     print("4. Variable Storage")
-    print("5. Command History")
+    print("5. Command Storage")
     print("6. History Management")
     print("7. Help Documentation")
     print("8. Quit")
