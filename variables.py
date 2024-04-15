@@ -58,7 +58,7 @@ def variable_storage(calculator):
             colorful_output(result, Color.MAGENTA)
         elif choice == "3":
             storage.display_variables()
-                        elif choice == "4":
+        elif choice == "4":
             name = input("Enter variable name to delete: ")
             storage.delete_variable(name)
         elif choice == "00":
