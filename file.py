@@ -152,4 +152,17 @@ def save_commands_to_file(command_storage):
                 file.write(f"{command}\n")
         colorful_output("Commands saved successfully.", Color.GREEN)
     except Exception as e:
+        colorful_output(f"Error saving commands: {str(e)}", Color.RED)
+        
+def clear_commands_from_file():
+    directory = "./files/"
+    ensure_directory_exists(directory)
+    file_name = f"{directory}commands.txt"
+    try:
+        os.remove(file_name)
+        colorful_output("Commands deleted successfully.", Color.GREEN)
+    except FileNotFoundError:
+        colorful_output("Commands file not found.", Color.YELLOW)
+    except Exception as e:
+        colorful_output(f"Error deleting commands: {str(e)}", Color.RED)
 
