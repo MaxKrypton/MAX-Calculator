@@ -24,3 +24,5 @@ class Color:
 def colorful_output(message, color):
     # Function to generate colorful output using ANSI escape codes
     colored_message = color + message + Color.RESET
+    print(colored_message)
+
